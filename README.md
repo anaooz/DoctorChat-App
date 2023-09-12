@@ -15,3 +15,10 @@
 ### Instale as dependências
 
 ```$ npm install```
+
+---
+## Método de utilização
+
+1. Utilizar um emulador de celular com o app Expo Go ou baixar o app diretamente da loja oficial no seu celular
+2. ```$ npx expo start``` no terminal da aplicação
+3. Conecte o app através do QR Code gerado no terminal ou através do link (exemplo: exp://127.0.0.1:8080)
