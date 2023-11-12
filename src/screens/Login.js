@@ -19,7 +19,7 @@ export default function Login({ navigation }) {
     };
 
     getConta();
-  }, []);
+  }, [conta]);
 
   useEffect(() => {
     if (loginAtivo) {

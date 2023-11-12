@@ -32,7 +32,9 @@ export const TextoInput = styled.TextInput`
     color: #000000
 `
 
-export const Scroll = styled.ScrollView``
+export const Scroll = styled.ScrollView`
+    margin-top: 20px;
+`
 
 export const EnviaSolicitacao = styled.TouchableOpacity``
 
