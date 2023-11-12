@@ -11,47 +11,46 @@ export default function Login({ navigation }) {
   const [senhaAtiva, setSenhaAtiva] = useState('')
   const [loginAtivo, setLoginAtivo] = useState(false)
 
-  async function getConta() {
-    const data = await AsyncStorage.getItem('conta')
-    const currentData = data ? JSON.parse(data) : []
+  useEffect(() => {
+    const getConta = async () => {
+      const data = await AsyncStorage.getItem('conta');
+      const currentData = data ? JSON.parse(data) : [];
+      setConta(currentData);
+    };
 
-    setConta(currentData)
-  }
+    getConta();
+  }, []);
 
   useEffect(() => {
-    getConta()
-  }, [conta])
-
-  useEffect(() => {
-    if(loginAtivo) navigation.navigate('Footer', { 
-      screen: "Usuário",
-      initial: false,
-      params: {
-        email: emailAtivo,
-        senha: senhaAtiva
-      } 
-    });
-  }, [loginAtivo, navigation])
-
-  // const clearAll = async () => {
-  //   await AsyncStorage.clear()
-  //   console.log(conta)
-  // }
+    if (loginAtivo) {
+      navigation.navigate('Footer', {
+        screen: 'Usuário',
+        initial: false,
+        params: {
+          email: emailAtivo,
+          senha: senhaAtiva,
+        },
+      });
+    }
+  }, [loginAtivo, navigation, emailAtivo, senhaAtiva]);
 
   function checaConta() {
-    //console.log(`${conta[0].email}/${email} e ${conta[0].senha}/${senha}`)
-    conta.some((element) => {
-      if(element.email === email && element.senha === senha) {
-        console.log(element)
-        setLoginAtivo(true)
-        setEmailAtivo(email)
-        setSenhaAtiva(senha)
-        return
-      }
-    })
-    return Alert.alert("Erro", "E-mail ou senha inválidos!")
-  }
+    if (!conta || conta.length === 0) {
+      return Alert.alert('Erro', 'Nenhuma conta encontrada!');
+    }
 
+    const found = conta.find(
+      (element) => element.email === email && element.senha === senha
+    );
+
+    if (found) {
+      setLoginAtivo(true);
+      setEmailAtivo(email);
+      setSenhaAtiva(senha);
+    } else {
+      Alert.alert('Erro', 'E-mail ou senha inválidos!');
+    }
+  }
 
   return (
     <Container>
