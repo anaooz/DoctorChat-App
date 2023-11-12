@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Botao, TextoInput, TextoBotao } from '../components/global';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Alert } from 'react-native';
+import React, { useEffect, useState } from 'react'
+import { Container, Botao, TextoInput, TextoBotao } from '../components/global'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { Alert } from 'react-native'
 
 export default function Login({ navigation }) {
   const [conta, setConta] = useState([]);

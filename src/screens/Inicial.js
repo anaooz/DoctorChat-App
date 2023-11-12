@@ -1,5 +1,5 @@
-import { Container, Botao, TextoBotao } from "../components/global";
-import { Imagem } from "../components/inicial";
+import { Container, Botao, TextoBotao } from '../components/global'
+import { Imagem } from '../components/inicial'
 
 export default function Inicial({ navigation }) {
     return(

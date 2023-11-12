@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { Botao, Container, TextoBotao, TextoInput } from "../components/global";
-import { Imagem } from "../components/inicial";
-import { Trash2, FileEdit } from "lucide-react-native";
-import { TouchableOpacity, Text, Alert } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useState, useEffect } from 'react'
+import { Botao, Container, TextoBotao, TextoInput } from '../components/global'
+import { Imagem } from '../components/inicial'
+import { Trash2, FileEdit } from 'lucide-react-native'
+import { TouchableOpacity, Text, Alert } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function Usuario({ navigation, route }) {
     const [email, setEmail] = useState(route.params.email)
