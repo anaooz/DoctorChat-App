@@ -37,3 +37,11 @@ export const Scroll = styled.ScrollView``
 export const EnviaSolicitacao = styled.TouchableOpacity``
 
 export const Notas = styled.FlatList``
+
+export const AreaAgendamento = styled.SafeAreaView`
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+`
